@@ -7,7 +7,7 @@ public class NewMain {
 
         Author author = new Author("Марк", "Твен");
         Author author1 = new Author("Лев", "Толстой");
-        Author author2 = new Author("Марк", "Толстой");
+        Author author2 = new Author("Марк", "Твен");
 
         System.out.println(author.equals(author2));
         System.out.println(author.hashCode());

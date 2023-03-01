@@ -26,16 +26,16 @@ public class Author {
         if (this == B) {
             return true;
         }
-        if (B == null || getClass() != B.getClass()) {
+        if (B == null || getClass() != B.getClass()){
             return false;
         }
         Author author = (Author) B;
-        return nameAuthor.equals(author.nameAuthor);
+        return nameAuthor.equals(author.nameAuthor) && surnameAuthor.equals(author.surnameAuthor);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nameAuthor);
+        return Objects.hash(nameAuthor, surnameAuthor);
     }
 
     @Override

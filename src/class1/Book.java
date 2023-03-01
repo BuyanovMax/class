@@ -39,16 +39,16 @@ public class Book {
         if (this == A) {
             return true;
         }
-        if (A == null || getClass() != A.getClass()) {
+        if (A == null || getClass() != A.getClass()){
             return false;
         }
         Book book = (Book) A;
-        return nameBook.equals(book.nameBook);
+        return yearOfIssue == book.yearOfIssue && nameBook.equals(book.nameBook) && author.equals(book.author);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nameBook);
+        return Objects.hash(nameBook, author, yearOfIssue);
     }
 
     @Override
