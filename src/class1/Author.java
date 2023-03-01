@@ -1,12 +1,14 @@
 package class1;
 
-public class Author {
-     private String nameAuthor;
-     private String sernameAuthor;
+import java.util.Objects;
 
-    public Author(String nameAuthor, String sernameAuthor) {
+public class Author {
+    private String nameAuthor;
+    private String surnameAuthor;
+
+    public Author(String nameAuthor, String surnameAuthor) {
         this.nameAuthor = nameAuthor;
-        this.sernameAuthor = sernameAuthor;
+        this.surnameAuthor = surnameAuthor;
 
     }
 
@@ -14,9 +16,31 @@ public class Author {
         return this.nameAuthor;
     }
 
-    public String getSernameAuthor() {
-        return this.sernameAuthor;
+    public String getSurnameAuthor() {
+        return this.surnameAuthor;
     }
 
+
+    @Override
+    public boolean equals(Object B) {
+        if (this == B) {
+            return true;
+        }
+        if (B == null || getClass() != B.getClass()) {
+            return false;
+        }
+        Author author = (Author) B;
+        return nameAuthor.equals(author.nameAuthor);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nameAuthor);
+    }
+
+    @Override
+    public String toString() {
+        return nameAuthor + " " + surnameAuthor;
+    }
 }
 
